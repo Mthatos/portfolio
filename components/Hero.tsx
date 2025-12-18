@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Download, ChevronDown, FileText, Layout, Terminal } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, Download } from 'lucide-react';
 import { MY_NAME, MY_ROLE } from '../constants';
-import { MODERN_CV, CLASSIC_CV, TECH_CV } from '../cvHtml';
 
 interface HeroProps {
   setActiveSection: (section: string) => void;
@@ -11,19 +10,6 @@ export const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [typingSpeed, setTypingSpeed] = useState(150);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setShowDropdown(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   useEffect(() => {
     const handleTyping = () => {
@@ -57,46 +43,19 @@ export const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
     }
   };
 
-  const handleDownload = (html: string, fileName: string) => {
-    try {
-        const blob = new Blob([html], { type: 'text/html' });
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = fileName;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        window.URL.revokeObjectURL(url);
-        setShowDropdown(false);
-    } catch (err) {
-        console.error("Failed to download CV", err);
-    }
+  const handleDownloadCV = () => {
+    // Direct link to the raw PDF version of the CV on GitHub
+    const pdfUrl = 'https://github.com/Mthatos/portfolio/raw/f768ca3e901011fcf313f6189569a5e41e194780/Thato%20Lesudi%20CV.pdf';
+    
+    // Programmatically create an anchor element to trigger the download
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.target = '_blank'; // Opens in new tab as fallback
+    link.download = 'Thato_Lesudi_CV.pdf'; // Suggests filename to the browser
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
-
-  const cvOptions = [
-    { 
-        name: 'Modern Professional', 
-        icon: <Layout size={16} />, 
-        html: MODERN_CV, 
-        file: 'Thato_Lesudi_Modern_CV.html',
-        desc: 'Clean, emerald-themed design'
-    },
-    { 
-        name: 'Classic Minimalist', 
-        icon: <FileText size={16} />, 
-        html: CLASSIC_CV, 
-        file: 'Thato_Lesudi_Classic_CV.html',
-        desc: 'Standard academic layout'
-    },
-    { 
-        name: 'Technical Focus', 
-        icon: <Terminal size={16} />, 
-        html: TECH_CV, 
-        file: 'Thato_Lesudi_Tech_CV.html',
-        desc: 'Developer-oriented terminal style'
-    },
-  ];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center min-h-screen py-20 relative z-10">
@@ -156,39 +115,13 @@ export const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </button>
                     
-                    <div className="relative" ref={dropdownRef}>
-                        <button 
-                            onClick={() => setShowDropdown(!showDropdown)}
-                            className={`px-6 py-3 bg-slate-900/50 text-emerald-400 font-semibold rounded-lg border border-emerald-500/30 hover:bg-emerald-500/10 hover:border-emerald-500/60 transition-all flex items-center justify-center gap-2 text-base backdrop-blur-sm h-[52px] ${showDropdown ? 'border-emerald-500 bg-emerald-500/10 shadow-[0_0_15px_rgba(16,185,129,0.2)]' : ''}`}
-                        >
-                            <Download size={18} />
-                            Download CV
-                            <ChevronDown size={18} className={`transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`} />
-                        </button>
-
-                        {showDropdown && (
-                            <div className="absolute bottom-full mb-2 left-0 w-64 bg-slate-900 border border-slate-700 rounded-xl shadow-2xl overflow-hidden z-50 animate-in fade-in slide-in-from-bottom-2">
-                                <div className="p-3 bg-slate-800/50 border-b border-slate-700 text-xs font-bold text-slate-500 uppercase tracking-widest">
-                                    Select Template
-                                </div>
-                                <div className="p-1">
-                                    {cvOptions.map((opt, idx) => (
-                                        <button
-                                            key={idx}
-                                            onClick={() => handleDownload(opt.html, opt.file)}
-                                            className="w-full text-left p-3 hover:bg-emerald-500/10 rounded-lg group transition-colors flex flex-col gap-0.5"
-                                        >
-                                            <div className="flex items-center gap-3 text-white font-medium group-hover:text-emerald-400 transition-colors">
-                                                {opt.icon}
-                                                {opt.name}
-                                            </div>
-                                            <span className="text-[10px] text-slate-500 ml-7">{opt.desc}</span>
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-                    </div>
+                    <button 
+                        onClick={handleDownloadCV}
+                        className="px-8 py-3 bg-slate-900/50 text-emerald-400 font-semibold rounded-lg border border-emerald-500/30 hover:bg-emerald-500/10 hover:border-emerald-500/60 transition-all flex items-center justify-center gap-2 text-base backdrop-blur-sm h-[52px]"
+                    >
+                        <Download size={18} />
+                        Download CV
+                    </button>
                 </div>
             </div>
         </div>
