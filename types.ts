@@ -1,4 +1,3 @@
-
 export interface Project {
   id: string;
   title: string;
@@ -12,7 +11,7 @@ export interface Project {
 
 export interface Skill {
   name: string;
-  category: 'Languages' | 'Frameworks' | 'Tools' | 'AI/ML';
+  category: 'Languages' | 'Frameworks' | 'Tools' | 'AI/ML' | 'Frontend';
   proficiency: number; // 0-100
 }
 

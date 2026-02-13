@@ -293,10 +293,10 @@ export const PORTFOLIO_CV = `<!DOCTYPE html>
             <div class="sidebar-section">
                 <h2>Technical Proficiencies</h2>
                 <ul class="bullet-list">
-                    <li>Java Development</li>
-                    <li>SQL</li>
-                    <li>API Integration</li>
-                    <li>AI Integration</li>
+                    <li>Java, Python, SQL, JavaScript</li>
+                    <li>HTML5, CSS3, React</li>
+                    <li>API & AI Integration</li>
+                    <li>Git & VS Code</li>
                 </ul>
             </div>
 
@@ -326,7 +326,7 @@ export const PORTFOLIO_CV = `<!DOCTYPE html>
             </div>
 
             <div class="summary">
-                I am an aspiring Software developer with strong coding skills. I am proficient in several different programming languages, covering both the front-end and back-end development. I am proficient mainly in Java, Python, MySQL, HTML5/CSS3. I strive for knowledge, and I am always eager to learn.
+                I am a Software developer with strong coding skills. I am proficient in several different programming languages, covering both the front-end and back-end development. I am proficient mainly in Java, Python, SQL, JavaScript, HTML5 and CSS3. I strive for knowledge, and I am always eager to learn.
             </div>
 
             <div class="content-section">

@@ -1,7 +1,7 @@
 import { Project, Skill, SocialLink, Experience, Education, Reference } from './types';
 
 export const MY_NAME = "Thato Lesudi";
-export const MY_ROLE = "Machine Learning Engineer";
+export const MY_ROLE = "Java Software developer";
 
 export const PERSONAL_DETAILS = {
   age: 23,
@@ -54,8 +54,12 @@ export const PROJECTS: Project[] = [
 ];
 
 export const SKILLS: Skill[] = [
-  { name: 'Java Development', category: 'Languages', proficiency: 90 },
-  { name: 'SQL', category: 'Languages', proficiency: 85 },
+  { name: 'Java', category: 'Languages', proficiency: 92 },
+  { name: 'Python', category: 'Languages', proficiency: 88 },
+  { name: 'SQL', category: 'Languages', proficiency: 90 },
+  { name: 'JavaScript', category: 'Languages', proficiency: 85 },
+  { name: 'HTML5', category: 'Frontend', proficiency: 95 },
+  { name: 'CSS3', category: 'Frontend', proficiency: 90 },
   { name: 'API Integration', category: 'Tools', proficiency: 90 },
   { name: 'AI Integration', category: 'AI/ML', proficiency: 88 },
 ];
@@ -115,6 +119,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
   { platform: 'LinkedIn', url: 'https://www.linkedin.com/in/thato-lesudi-023070216', icon: 'linkedin' },
 ];
 
-export const BIO = `I am an aspiring Software developer with strong coding skills. I am proficient in several different programming languages, covering both the front-end and back-end development. I am proficient mainly in Java, Python, MySQL, HTML5/CSS3. I strive for knowledge, and I am always eager to learn.`;
+export const BIO = `I am a Software developer with strong coding skills. I am proficient in several different programming languages, covering both the front-end and back-end development. I am proficient mainly in Java, Python, SQL, JavaScript, HTML5 and CSS3. I strive for knowledge, and I am always eager to learn.`;
 
-export const CAREER_OBJECTIVE = `To secure a challenging position as an AI Engineer or Machine Learning Engineer where I can leverage my skills in Python, Java, and Full Stack Development to contribute to innovative projects. I aim to work in a collaborative environment that values technical excellence, adaptability, and effective communication.`;
+export const CAREER_OBJECTIVE = `To secure a challenging position as a Java Software developer where I can leverage my skills in Java, Python, and Full Stack Development to contribute to innovative projects. I aim to work in a collaborative environment that values technical excellence, adaptability, and effective communication.`;

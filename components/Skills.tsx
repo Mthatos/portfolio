@@ -32,32 +32,32 @@ export const Skills: React.FC = () => {
         <div className="w-full md:w-1/2 space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Technical Expertise</h2>
           <p className="text-slate-400 text-lg leading-relaxed mb-8">
-             My technical toolkit spans the full spectrum of AI and software engineering. 
-             From developing sophisticated AI solutions to building responsive 
-             React frontends, I offer a comprehensive skill set for modern tech challenges.
+             My technical toolkit spans the full spectrum of modern software engineering. 
+             From developing robust backend systems in Java to creating responsive 
+             frontends with HTML5 and CSS3, I ensure quality at every layer.
           </p>
           
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800 hover:border-emerald-500/30 transition-colors">
                 <h3 className="text-emerald-400 font-bold mb-2 text-sm uppercase tracking-wider">Languages</h3>
-                <p className="text-slate-300 text-sm">Python, TypeScript, JavaScript, SQL</p>
+                <p className="text-slate-300 text-sm">Java, Python, SQL, JavaScript</p>
+            </div>
+            <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800 hover:border-emerald-500/30 transition-colors">
+                <h3 className="text-emerald-400 font-bold mb-2 text-sm uppercase tracking-wider">Frontend</h3>
+                <p className="text-slate-300 text-sm">HTML5, CSS3, React, Tailwind CSS</p>
             </div>
             <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800 hover:border-emerald-500/30 transition-colors">
                 <h3 className="text-emerald-400 font-bold mb-2 text-sm uppercase tracking-wider">AI & Data</h3>
                 <p className="text-slate-300 text-sm">Pandas, Gemini API, Scikit-learn</p>
             </div>
             <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800 hover:border-emerald-500/30 transition-colors">
-                <h3 className="text-emerald-400 font-bold mb-2 text-sm uppercase tracking-wider">Frontend</h3>
-                <p className="text-slate-300 text-sm">React, Next.js, Tailwind CSS</p>
-            </div>
-            <div className="bg-slate-900/60 p-5 rounded-xl border border-slate-800 hover:border-emerald-500/30 transition-colors">
                 <h3 className="text-emerald-400 font-bold mb-2 text-sm uppercase tracking-wider">Tools</h3>
-                <p className="text-slate-300 text-sm">Git, Voiceflow, Vercel</p>
+                <p className="text-slate-300 text-sm">Git, VS Code, Vercel</p>
             </div>
           </div>
         </div>
 
-        <div className="w-full md:w-1/2 h-[400px]">
+        <div className="w-full md:w-1/2 h-[450px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={sortedSkills}

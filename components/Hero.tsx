@@ -103,7 +103,7 @@ export const Hero: React.FC<HeroProps> = ({ setActiveSection }) => {
                 </div>
                 
                 <p className="text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto md:mx-0 font-light border-l-2 border-emerald-500/30 pl-4">
-                    Aspiring Software developer proficient in Java, Python, and SQL. Specializing in building scalable intelligent systems.
+                    Java Software developer proficient in Java, Python, and SQL. Specializing in building scalable intelligent systems.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center">
